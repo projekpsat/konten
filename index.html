@@ -1,0 +1,2943 @@
+<!DOCTYPE html>
+<html lang="jv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LARISI - Blanja Saka Omah</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         LOADING SCREEN
+    ========================== -->
+    <div id="loadingScreen">
+
+        <div class="loading-box">
+
+            <div class="loading-logo">
+                🛍️
+            </div>
+
+            <h1>LARISI</h1>
+
+            <p>
+                Blanja Saka Omah
+            </p>
+
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+
+            <small>
+                Momot website...
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         LOGIN
+    ========================== -->
+    <div id="loginPage">
+
+        <div class="login-box">
+
+            <div class="login-logo">
+                🛍️
+            </div>
+
+            <h1>
+                LARISI
+            </h1>
+
+            <p class="subtitle">
+                Blanja kebutuhan saben dina tanpa kudu metu omah
+            </p>
+
+            <label for="loginName">
+                Jeneng
+            </label>
+
+            <input
+                type="text"
+                id="loginName"
+                placeholder="Tulisen jenengmu"
+            >
+
+            <label for="loginAddress">
+                Alamat
+            </label>
+
+            <input
+                type="text"
+                id="loginAddress"
+                placeholder="Tulisen alamat omahmu"
+            >
+
+            <label for="loginPassword">
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Gawe password"
+            >
+
+            <button
+                class="login-btn"
+                onclick="login()">
+
+                Mlebu
+
+            </button>
+
+            <p class="login-note">
+                Data iki mung digunakake kanggo demo website LARISI
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         MAIN PAGE
+    ========================== -->
+    <div id="mainPage">
+
+        <!-- HEADER -->
+        <header>
+
+            <div class="navbar">
+
+                <div class="logo">
+                    🛍️ LARISI
+            
+                </div>
+
+                <!-- SEARCH -->
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Goleki barang utawa kategori..."
+                        autocomplete="off"
+                    >
+
+                    <div
+                        class="suggestions"
+                        id="suggestions">
+                    </div>
+
+                </div>
+
+
+                <!-- NAV ICON -->
+                <div class="nav-icons">
+
+                    <button
+                        class="nav-btn"
+                        onclick="openNotifications()">
+
+                        🔔
+
+                        <span
+                            class="badge"
+                            id="notificationCount">
+                            0
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="nav-btn"
+                        onclick="openOrders()">
+
+                        📦
+
+                    </button>
+
+
+                    <button
+                        class="nav-btn"
+                        onclick="openCart()">
+
+                        🛒
+
+                        <span
+                            class="badge"
+                            id="cartCount">
+                            0
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             USER BAR
+        ========================== -->
+
+        <div class="user-bar">
+
+            <div class="user-info">
+
+                Sugeng rawuh,
+                <strong id="userName">
+                    Pengguna
+                </strong>
+                👋
+
+                <br>
+
+                <small>
+                    Siap blanja kebutuhanmu dina iki?
+                </small>
+
+            </div>
+
+
+            <div
+                class="coin-box"
+                onclick="openOrders()">
+
+                🪙
+                <span id="coinCount">
+                    0
+                </span>
+                Koin
+
+            </div>
+
+        </div>
+
+
+       
+
+        <!-- =========================
+             INFO
+        ========================== -->
+
+        <section class="info-grid">
+
+            <div class="info-card">
+
+
+                <h3>
+                    Dikirim menyang omah
+                </h3>
+
+                <p>
+                    Ora perlu repot metu omah.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+           
+                <h3>
+                    Proses cepet
+                </h3>
+
+                <p>
+                    Pesenan langsung diproses.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+         
+                <h3>
+                    Rega bersahabat
+                </h3>
+
+                <p>
+                    Ana promo lan potongan rega.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+            
+                <h3>
+                    Blanja aman
+                </h3>
+
+                <p>
+                    Informasi pesenan ditampilake kanthi jelas.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FLASH SALE
+        ========================== -->
+
+        <section class="section">
+
+            <div class="section-title">
+
+                <h2 class="flash-title">
+                    🔥 ADOL CEPET
+                </h2>
+
+                <div
+                    class="countdown"
+                    id="countdown">
+                    02:00:00
+                </div>
+
+            </div>
+
+
+            <div class="products">
+
+                <div class="product">
+
+                    <div class="product-img">
+                        🍚
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Beras 
+                        </h3>
+
+                        <div class="old-price">
+                            Rp75.000
+                        </div>
+
+                        <div class="price">
+                            Rp68.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.9 | 1,2rb didol
+                        </div>
+
+                        <button
+                            class="cart-add"
+                            onclick="addToCart(
+                                'Beras Premium 5 Kg',
+                                68000,
+                                '🍚'
+                            )">
+
+                            + Keranjang
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="product">
+
+                    <div class="product-img">
+                        🧼
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Sabun 
+                        </h3>
+
+                        <div class="old-price">
+                            Rp10.000
+                        </div>
+
+                        <div class="price">
+                            Rp8.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.8 | 900 didol
+                        </div>
+
+                        <button
+                            class="cart-add"
+                            onclick="addToCart(
+                                'Sabun Mandi',
+                                8000,
+                                '🧼'
+                            )">
+
+                            + Keranjang
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="product">
+
+                    <div class="product-img">
+                        🧻
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Tisu 
+                        </h3>
+
+                        <div class="old-price">
+                            Rp15.000
+                        </div>
+
+                        <div class="price">
+                            Rp12.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.8 | 700 didol
+                        </div>
+
+                        <button
+                            class="cart-add"
+                            onclick="addToCart(
+                                'Tisu Wajah',
+                                12000,
+                                '🧻'
+                            )">
+
+                            + Keranjang
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="product">
+
+                    <div class="product-img">
+                        😷
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Masker 
+                        </h3>
+
+                        <div class="old-price">
+                            Rp20.000
+                        </div>
+
+                        <div class="price">
+                            Rp15.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.9 | 1,5rb didol
+                        </div>
+
+                        <button
+                            class="cart-add"
+                            onclick="addToCart(
+                                'Masker Sekali Pakai',
+                                15000,
+                                '😷'
+                            )">
+
+                            + Keranjang
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             KATEGORI
+        ========================== -->
+
+        <section class="section">
+
+            <div class="section-title">
+
+                <h2>
+                 Jinise
+                </h2>
+
+            </div>
+
+
+            <div class="categories">
+
+                <button
+                    class="category active"
+                    onclick="filterCategory('all', this)">
+                    Kabeh
+                </button>
+
+                <button
+                    class="category"
+                    onclick="filterCategory('panganan', this)">
+                    Panganan
+                </button>
+
+                <button
+                    class="category"
+                    onclick="filterCategory('ombenan', this)">
+                     Ombenan
+                </button>
+
+                <button
+                    class="category"
+                    onclick="filterCategory('omah', this)">
+                     Kebutuhan Omah
+                </button>
+
+                <button
+                    class="category"
+                    onclick="filterCategory('kesehatan', this)">
+                     Kesehatan
+                </button>
+
+                <button
+                    class="category"
+                    onclick="filterCategory('kebersihan', this)">
+                     Kebersihan
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PRODUK
+        ========================== -->
+
+        <section
+            class="section"
+            id="productSection">
+
+            <div class="section-title">
+
+                <div>
+
+                    <h2>
+                        🛍️ Kabeh Produk
+                    </h2>
+
+                    <p class="section-desc">
+                        Kebutuhan saben dina ana ing kene
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="products"
+                id="productList">
+
+
+                <!-- =================================
+                     PANGANAN
+                ================================== -->
+
+                <!-- 1 -->
+                <div
+                    class="product"
+                    data-name="mie instan goreng"
+                    data-category="panganan">
+
+                    <div class="product-img">
+                        🍜
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Mie Instan 
+                        </h3>
+
+                        <div class="price">
+                            Rp3.500
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.9
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Mie Instan Goreng',
+                                    3500,
+                                    '🍜'
+                                )">
+
+                                + Keranjang
+
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 2 -->
+                <div
+                    class="product"
+                    data-name="telur ayam"
+                    data-category="panganan">
+
+                    <div class="product-img">
+                        🥚
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Endhog 1kg
+                        </h3>
+
+                        <div class="price">
+                            Rp28.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.9
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Telur Ayam 1 Kg',
+                                    28000,
+                                    '🥚'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 3 -->
+                <div
+                    class="product"
+                    data-name="wortel"
+                    data-category="panganan">
+
+                    <div class="product-img">
+                        🥕
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Wortel 500 Gram
+                        </h3>
+
+                        <div class="price">
+                            Rp8.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.8
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Wortel 500 Gram',
+                                    8000,
+                                    '🥕'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 4 -->
+                <div
+                    class="product"
+                    data-name="bayam"
+                    data-category="panganan">
+
+                    <div class="product-img">
+                        🌿
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Bayam 
+                        </h3>
+
+                        <div class="price">
+                            Rp4.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.8
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Bayam 1 Ikat',
+                                    4000,
+                                    '🌿'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 5 -->
+                <div
+                    class="product"
+                    data-name="kangkung"
+                    data-category="panganan">
+
+                    <div class="product-img">
+                        🥬
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Kangkung
+                        </h3>
+
+                        <div class="price">
+                            Rp4.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.8
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Kangkung 1 Ikat',
+                                    4000,
+                                    '🥬'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 6 -->
+                <div
+                    class="product"
+                    data-name="tomat"
+                    data-category="panganan">
+
+                    <div class="product-img">
+                        🍅
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Tomat 500 Gram
+                        </h3>
+
+                        <div class="price">
+                            Rp7.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.7
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Tomat 500 Gram',
+                                    7000,
+                                    '🍅'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 7 -->
+                <div
+                    class="product"
+                    data-name="bawang merah"
+                    data-category="panganan">
+
+                    <div class="product-img">
+                        🧅
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Brambang Abang 250 Gram
+                        </h3>
+
+                        <div class="price">
+                            Rp9.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.9
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Bawang Merah 250 Gram',
+                                    9000,
+                                    '🧅'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 8 -->
+                <div
+                    class="product"
+                    data-name="bawang putih"
+                    data-category="panganan">
+
+                    <div class="product-img">
+                        🧄
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Brambang Putih 250 Gram
+                        </h3>
+
+                        <div class="price">
+                            Rp8.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.8
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Bawang Putih 250 Gram',
+                                    8000,
+                                    '🧄'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 9 -->
+                <div
+                    class="product"
+                    data-name="cabai merah"
+                    data-category="panganan">
+
+                    <div class="product-img">
+                        🌶️
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                        Lombok Abang 250 Gram
+                        </h3>
+
+                        <div class="price">
+                            Rp12.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.8
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Cabai Merah 250 Gram',
+                                    12000,
+                                    '🌶️'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 10 -->
+                <div
+                    class="product"
+                    data-name="kentang"
+                    data-category="panganan">
+
+                    <div class="product-img">
+                        🥔
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Kentang 
+                        </h3>
+
+                        <div class="price">
+                            Rp17.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.8
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Kentang 1 Kg',
+                                    17000,
+                                    '🥔'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 11 -->
+                <div
+                    class="product"
+                    data-name="gula pasir"
+                    data-category="panganan">
+
+                    <div class="product-img">
+                        🍬
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Gula Pasir 1 Kg
+                        </h3>
+
+                        <div class="price">
+                            Rp18.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.8
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Gula Pasir 1 Kg',
+                                    18000,
+                                    '🍬'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 12 -->
+                <div
+                    class="product"
+                    data-name="garam dapur"
+                    data-category="panganan">
+
+                    <div class="product-img">
+                        🧂
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Uyah 500 Gram
+                        </h3>
+
+                        <div class="price">
+                            Rp5.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.7
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Garam Dapur 500 Gram',
+                                    5000,
+                                    '🧂'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================
+                     OMBENAN
+                ================================== -->
+
+                <div
+                    class="product"
+                    data-name="banyu mineral"
+                    data-category="ombenan">
+
+                    <div class="product-img">
+                        💧
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Banyu Mineral 600 ml
+                        </h3>
+
+                        <div class="price">
+                            Rp3.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.8
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Banyu Mineral 600 ml',
+                                    3000,
+                                    '💧'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="product"
+                    data-name="teh botol"
+                    data-category="ombenan">
+
+                    <div class="product-img">
+                        🧃
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Teh 
+                        </h3>
+
+                        <div class="price">
+                            Rp5.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.8
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Teh Botol',
+                                    5000,
+                                    '🧃'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="product"
+                    data-name="susu uht"
+                    data-category="ombenan">
+
+                    <div class="product-img">
+                        🥛
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Susu
+                        </h3>
+
+                        <div class="price">
+                            Rp19.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.9
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Susu UHT 1 Liter',
+                                    19000,
+                                    '🥛'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="product"
+                    data-name="jus jeruk"
+                    data-category="ombenan">
+
+                    <div class="product-img">
+                        🍊
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Jus Jeruk 350 ml
+                        </h3>
+
+                        <div class="price">
+                            Rp7.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.7
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Jus Jeruk 350 ml',
+                                    7000,
+                                    '🍊'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="product"
+                    data-name="kopi sachet"
+                    data-category="ombenan">
+
+                    <div class="product-img">
+                        ☕
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Kopi 
+                        </h3>
+
+                        <div class="price">
+                            Rp12.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.9
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Kopi Sachet',
+                                    12000,
+                                    '☕'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="product"
+                    data-name="sirup"
+                    data-category="ombenan">
+
+                    <div class="product-img">
+                        🧋
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Sirup 600 ml
+                        </h3>
+
+                        <div class="price">
+                            Rp17.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.8
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Sirup 600 ml',
+                                    17000,
+                                    '🧋'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================
+                     KEBUTUHAN OMAH
+                ================================== -->
+
+                <div
+                    class="product"
+                    data-name="lampu led"
+                    data-category="omah">
+
+                    <div class="product-img">
+                        💡
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Lampu LED 
+                        </h3>
+
+                        <div class="price">
+                            Rp25.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.7
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Lampu LED Hemat Energi',
+                                    25000,
+                                    '💡'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="product"
+                    data-name="panci masak"
+                    data-category="omah">
+
+                    <div class="product-img">
+                        🍳
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Panci 
+                        </h3>
+
+                        <div class="price">
+                            Rp55.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.8
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Panci Masak',
+                                    55000,
+                                    '🍳'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="product"
+                    data-name="sendok makan"
+                    data-category="omah">
+
+                    <div class="product-img">
+                        🥄
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Sendok Isi 6
+                        </h3>
+
+                        <div class="price">
+                            Rp18.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.7
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Sendok Makan Isi 6',
+                                    18000,
+                                    '🥄'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="product"
+                    data-name="spons cuci piring"
+                    data-category="omah">
+
+                    <div class="product-img">
+                        🧽
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Spons
+                        </h3>
+
+                        <div class="price">
+                            Rp7.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.8
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Spons Cuci Piring',
+                                    7000,
+                                    '🧽'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="product"
+                    data-name="ember plastik"
+                    data-category="omah">
+
+                    <div class="product-img">
+                        🪣
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Ember Plastik
+                        </h3>
+
+                        <div class="price">
+                            Rp25.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.6
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Ember Plastik',
+                                    25000,
+                                    '🪣'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="product"
+                    data-name="sapunya"
+                    data-category="omah">
+
+                    <div class="product-img">
+                        🧹
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Sapu Omah
+                        </h3>
+
+                        <div class="price">
+                            Rp22.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.8
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Sapu Rumah',
+                                    22000,
+                                    '🧹'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="product"
+                    data-name="wadah makanan"
+                    data-category="omah">
+
+                    <div class="product-img">
+                        🥣
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Wadah Mangan
+                        </h3>
+
+                        <div class="price">
+                            Rp20.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.8
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Wadah Makanan',
+                                    20000,
+                                    '🥣'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================
+                     KESEHATAN
+                ================================== -->
+
+                <div
+                    class="product"
+                    data-name="masker"
+                    data-category="kesehatan">
+
+                    <div class="product-img">
+                        😷
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Masker
+                        </h3>
+
+                        <div class="price">
+                            Rp15.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.9
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Masker Sekali Pakai',
+                                    15000,
+                                    '😷'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="product"
+                    data-name="hand sanitizer"
+                    data-category="kesehatan">
+
+                    <div class="product-img">
+                        🧴
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Antiseptik 100 ml
+                        </h3>
+
+                        <div class="price">
+                            Rp10.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.8
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Hand Sanitizer 100 ml',
+                                    10000,
+                                    '🧴'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="product"
+                    data-name="tisu basah"
+                    data-category="kesehatan">
+
+                    <div class="product-img">
+                        🧻
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Tisu Basah 
+                        </h3>
+
+                        <div class="price">
+                            Rp13.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.8
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Tisu Basah Antibakteri',
+                                    13000,
+                                    '🧻'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="product"
+                    data-name="termometer digital"
+                    data-category="kesehatan">
+
+                    <div class="product-img">
+                        🌡️
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Termometer Digital
+                        </h3>
+
+                        <div class="price">
+                            Rp35.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.7
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Termometer Digital',
+                                    35000,
+                                    '🌡️'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="product"
+                    data-name="vitamin c"
+                    data-category="kesehatan">
+
+                    <div class="product-img">
+                        💊
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Vitamin C
+                        </h3>
+
+                        <div class="price">
+                            Rp18.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.9
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Vitamin C',
+                                    18000,
+                                    '💊'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="product"
+                    data-name="kotak p3k"
+                    data-category="kesehatan">
+
+                    <div class="product-img">
+                        🩹
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Kotak P3K Mini
+                        </h3>
+
+                        <div class="price">
+                            Rp30.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.8
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Kotak P3K Mini',
+                                    30000,
+                                    '🩹'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================
+                     KEBERSIHAN
+                ================================== -->
+
+                <div
+                    class="product"
+                    data-name="sabun mandi"
+                    data-category="kebersihan">
+
+                    <div class="product-img">
+                        🧼
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Sabun Adus
+                        </h3>
+
+                        <div class="price">
+                            Rp8.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.8
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Sabun Mandi',
+                                    8000,
+                                    '🧼'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="product"
+                    data-name="tisu wajah"
+                    data-category="kebersihan">
+
+                    <div class="product-img">
+                        🧻
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Tisu
+                        </h3>
+
+                        <div class="price">
+                            Rp12.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.8
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Tisu Wajah',
+                                    12000,
+                                    '🧻'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="product"
+                    data-name="deterjen cair"
+                    data-category="kebersihan">
+
+                    <div class="product-img">
+                        🧴
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Deterjen Cair
+                        </h3>
+
+                        <div class="price">
+                            Rp17.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.8
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Deterjen Cair',
+                                    17000,
+                                    '🧴'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="product"
+                    data-name="pemutih pakaian"
+                    data-category="kebersihan">
+
+                    <div class="product-img">
+                        🫧
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Pemutih Klambi
+                        </h3>
+
+                        <div class="price">
+                            Rp14.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.7
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Pemutih Pakaian',
+                                    14000,
+                                    '🫧'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="product"
+                    data-name="pembersih lantai"
+                    data-category="kebersihan">
+
+                    <div class="product-img">
+                        🧹
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Pembersih Lantai
+                        </h3>
+
+                        <div class="price">
+                            Rp16.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.9
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Pembersih Lantai',
+                                    16000,
+                                    '🧹'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="product"
+                    data-name="sabun cuci piring"
+                    data-category="kebersihan">
+
+                    <div class="product-img">
+                        🧽
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Sabun Asahan
+                        </h3>
+
+                        <div class="price">
+                            Rp13.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.8
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Sabun Cuci Piring',
+                                    13000,
+                                    '🧽'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="product"
+                    data-name="pewangi pakaian"
+                    data-category="kebersihan">
+
+                    <div class="product-img">
+                        🌸
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Pewangi Klambi
+                        </h3>
+
+                        <div class="price">
+                            Rp15.000
+                        </div>
+
+                        <div class="rating">
+                            ⭐ 4.8
+                        </div>
+
+                        <div class="product-actions">
+
+                            <button
+                                class="cart-add"
+                                onclick="addToCart(
+                                    'Pewangi Pakaian',
+                                    15000,
+                                    '🌸'
+                                )">
+                                + Keranjang
+                            </button>
+
+                            <button
+                                class="favorite-btn"
+                                onclick="favorite(this)">
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROMO
+        ========================== -->
+
+        <section class="section">
+
+            <div class="promo">
+
+                <div>
+
+                    <h2>
+                        🎁 Promo Spesial LARISI
+                    </h2>
+
+                    <p>
+                        Gratis ongkir 100% + potongan rega 50%
+                        tanpa minimal belanja.
+                    </p>
+
+                    <p class="promo-small">
+                        Voucher otomatis digunakake nalika checkout.
+                    </p>
+
+                </div>
+
+                <div class="promo-icon">
+                    🎟️
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FOOTER
+        ========================== -->
+
+        <footer>
+
+            <h2>
+                🛍️ LARISI
+            </h2>
+
+            <p>
+                Blanja kebutuhan saben dina saka omah.
+            </p>
+
+            <p>
+                © 2026 LARISI - Projek Tugas Sekolah
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <!-- =========================
+         NOTIFICATION
+    ========================== -->
+
+    <div
+        class="notification-panel"
+        id="notificationPanel">
+
+        <div class="notification-header">
+
+            <span>
+                🔔 Notifikasi
+            </span>
+
+            <button
+                onclick="closeNotifications()"
+                class="mini-close">
+
+                ✕
+
+            </button>
+
+        </div>
+
+        <div id="notificationList"></div>
+
+    </div>
+
+
+    <!-- =========================
+         ORDER
+    ========================== -->
+
+    <div
+        class="order-panel"
+        id="orderPanel">
+
+        <div class="order-box">
+
+            <div class="order-header">
+
+                <h2>
+                    📦 Pesanan Kowe
+                </h2>
+
+                <button
+                    class="close-btn"
+                    onclick="closeOrders()">
+
+                    ✕
+
+                </button>
+
+            </div>
+
+            <div id="orderList"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         CART
+    ========================== -->
+
+    <div
+        class="cart-panel"
+        id="cartPanel">
+
+        <div class="cart-header">
+
+            <h2>
+                🛒 Keranjang
+            </h2>
+
+            <button
+                class="close-btn"
+                onclick="closeCart()">
+
+                ✕
+
+            </button>
+
+        </div>
+
+        <div
+            class="cart-items"
+            id="cartItems">
+        </div>
+
+        <div class="cart-summary">
+
+            <div class="summary-row">
+
+                <span>
+                    Subtotal
+                </span>
+
+                <span id="cartSubtotal">
+                    Rp0
+                </span>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Promo otomatis
+                </span>
+
+                <span class="discount-text">
+                    -50%
+                </span>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Ongkir
+                </span>
+
+                <span class="discount-text">
+                    Gratis
+                </span>
+
+            </div>
+
+
+            <div class="summary-row total">
+
+                <span>
+                    Perkiraan Total
+                </span>
+
+                <span id="cartTotal">
+                    Rp0
+                </span>
+
+            </div>
+
+
+            <button
+                class="checkout-btn"
+                onclick="openCheckout()">
+
+                Lanjut Checkout
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         CHECKOUT
+    ========================== -->
+
+    <div
+        class="checkout-overlay"
+        id="checkoutOverlay">
+
+        <div class="checkout-box">
+
+            <div class="order-header">
+
+                <h2>
+                    🧾 Checkout
+                </h2>
+
+                <button
+                    class="close-btn"
+                    onclick="closeCheckout()">
+
+                    ✕
+
+                </button>
+
+            </div>
+
+
+            <div class="checkout-section">
+
+                <h3>
+                    📍 Alamat Pengiriman
+                </h3>
+
+                <p>
+                    <strong id="checkoutName">
+                    </strong>
+                </p>
+
+                <p id="checkoutAddress">
+                </p>
+
+            </div>
+
+
+            <div class="checkout-section">
+
+                <h3>
+                    🛍️ Barang sing arep dituku
+                </h3>
+
+                <div id="checkoutProducts">
+                </div>
+
+            </div>
+
+
+            <div class="checkout-section">
+
+                <h3>
+                    🚚 Cara Pengiriman
+                </h3>
+
+                <select
+                    id="shipping"
+                    onchange="calculateCheckout()">
+
+                    <option value="10000">
+                        Reguler - Rp10.000
+                    </option>
+
+                    <option value="15000">
+                        Cepet - Rp15.000
+                    </option>
+
+                    <option value="20000">
+                        Kilat - Rp20.000
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="checkout-section">
+
+                <h3>
+                    🎟️ Voucher
+                </h3>
+
+                <div class="auto-voucher">
+
+                    <strong>
+                        ✅ Voucher otomatis aktif
+                    </strong>
+
+                    <br>
+
+                    <span>
+                        🚚 Gratis ongkir 100%
+                    </span>
+
+                    <br>
+
+                    <span>
+                        💸 Potongan harga 50%
+                    </span>
+
+                    <br>
+
+                    <small>
+                        Tanpa minimal belanja
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="checkout-section">
+
+                <h3>
+                    🪙 Koin LARISI
+                </h3>
+
+                <p>
+                    Kowe duwe
+                    <strong id="checkoutCoins">
+                        0
+                    </strong>
+                    koin.
+                </p>
+
+                <label class="coin-check">
+
+                    <input
+                        type="checkbox"
+                        id="useCoins"
+                        onchange="calculateCheckout()"
+                    >
+
+                    Gunakake koin kanggo diskon
+
+                </label>
+
+                <small>
+                    1 koin = Rp1.000
+                </small>
+
+            </div>
+
+
+            <div class="checkout-section">
+
+                <h3>
+                    💳 Metode Pembayaran
+                </h3>
+
+                <select id="payment">
+
+                    <option>
+                        COD
+                    </option>
+
+                    <option>
+                        Transfer Bank
+                    </option>
+
+                    <option>
+                        Dompet Digital
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="checkout-section">
+
+                <h3>
+                    📝 Catatan
+                </h3>
+
+                <textarea
+                    id="orderNote"
+                    rows="3"
+                    placeholder="Tulisen catatan kanggo penjual...">
+                </textarea>
+
+            </div>
+
+
+            <div class="final-total">
+
+                <div class="summary-row">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <span id="checkoutSubtotal">
+                        Rp0
+                    </span>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Potongan 50%
+                    </span>
+
+                    <span
+                        id="checkoutDiscount"
+                        class="discount-text">
+
+                        - Rp0
+
+                    </span>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Ongkir
+                    </span>
+
+                    <span
+                        id="checkoutShipping"
+                        class="discount-text">
+
+                        Gratis
+
+                    </span>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Potongan Koin
+                    </span>
+
+                    <span
+                        id="checkoutCoinDiscount"
+                        class="discount-text">
+
+                        - Rp0
+
+                    </span>
+
+                </div>
+
+
+                <div class="summary-row total">
+
+                    <span>
+                        Total Akhir
+                    </span>
+
+                    <span
+                        class="big"
+                        id="checkoutTotal">
+
+                        Rp0
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="make-order"
+                onclick="makeOrder()">
+
+                🛍️ Gawe Pesenan
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
